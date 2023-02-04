@@ -2,8 +2,20 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '@/styles/Home.module.css'
 import { Footer } from '@/components/Footer'
+import { useEffect } from 'react'
 
 export default function Home() {
+  useEffect(() => {
+    console.log('マウント時の処理')
+    // DOMを直接アクセスするのは基本NG(その場合useRefを使用)
+    document.body.style.backgroundColor = 'lightblue'
+
+    // return文の中身はアンマウント時の挙動を制御
+    return () => {
+      console.log('アンマウント時の処理')
+      document.body.style.backgroundColor = ''
+    }
+  }, [])
   return (
     <>
       <Head>
