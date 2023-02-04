@@ -48,15 +48,16 @@ export default function Home() {
             height={37}
             priority
           />
-          <div className={styles.thirteen}>
+          <div className={ styles.thirteen }>
             <Image
               src="/thirteen.svg"
               alt="13"
               width={40}
               height={31}
               priority
-            />
+              />
           </div>
+          <h1>Hello Next.js</h1>
         </div>
 
         <div className={styles.grid}>
